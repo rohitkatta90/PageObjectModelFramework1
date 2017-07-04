@@ -1,6 +1,4 @@
 package com.yagna.functions;
-import com.yagna.functions.BaseClass;
-
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
