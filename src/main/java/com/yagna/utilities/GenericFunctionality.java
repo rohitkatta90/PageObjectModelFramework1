@@ -8,7 +8,7 @@ import com.yagna.functions.BaseClass;
 
 
 public class GenericFunctionality extends BaseClass{
-
+	
 	public static void genericWait()
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -20,4 +20,6 @@ public class GenericFunctionality extends BaseClass{
 	public static void switchingToActiveWindow(){
 		driver.switchTo().activeElement();
 	}
+	
+	
 }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+	<appender name="ConsoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d] %-4r [%t] %-5p %c %x - %m%n" />
+		</layout>
+	</appender>
+	<appender name="InfoFileAppender" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="./log/Info.log"/>
+		<!-- <param name="Threshold" value="WARN"/> -->
+		<param name="Append" value="true" />
+		<param name="Threshold" value="INFO" />
+		<param name="MaxFileSize" value="50000KB" />
+		<param name="MaxBackupIndex" value="100" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d] %-4r [%t] %-5p %c %x - %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+         <param name="LevelMin" value="INFO" />
+         <param name="LevelMax" value="INFO" />
+       </filter>
+	</appender>
+	
+	<appender name="ErrorFileAppender" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="./log/Error.log"/>
+		<!-- <param name="Threshold" value="WARN"/> -->
+		<param name="Append" value="true" />
+		<param name="Threshold" value="ERROR" />
+		<param name="MaxFileSize" value="50000KB" />
+		<param name="MaxBackupIndex" value="100" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d] %-4r [%t] %-5p %c %x - %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+         <param name="LevelMin" value="ERROR" />
+         <param name="LevelMax" value="ERROR" />
+       </filter>
+	</appender>
+	
+	
+	<root>
+		<level value="debug" />
+		<!-- <appender-ref ref="ConsoleAppender" /> -->
+		<appender-ref ref="InfoFileAppender" />
+		<appender-ref ref="ErrorFileAppender" />
+	</root>
+</log4j:configuration>

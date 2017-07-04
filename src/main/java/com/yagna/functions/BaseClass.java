@@ -11,11 +11,11 @@ public class BaseClass {
 	public static Properties conf=null;
 	
 	public BaseClass(){
-		
-		String sFileName = System.getProperty("user.dir")+"src\\main\\java\\com\\yagna\\utilities\\config.properties";
+		System.out.println(System.getProperty("user.dir"));
+		String sFileName = System.getProperty("user.dir")+"\\src\\main\\java\\com\\yagna\\utilities\\config.properties";
 		try {
 			FileInputStream fis = new FileInputStream(sFileName);
-			conf.load(fis);
+			//conf.load(fis);
 		} catch (Exception e) {
 			System.out.println("Inside BaseClass --> problem finding config file..OR loading config file...");
 			e.printStackTrace();

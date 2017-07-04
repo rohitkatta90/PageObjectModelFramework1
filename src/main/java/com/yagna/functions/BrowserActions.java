@@ -18,14 +18,13 @@ public class BrowserActions extends BaseClass {
 					"C:\\KeywordDriven\\chromedriver.exe");
 			driver = new ChromeDriver();
 		}
-		//driver.manage().window().maximize();
+		driver.manage().window().maximize();
 	}
 	
 	public static void goToUrl(){
 		
 		driver.get(sUrl);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
 	}
 	
 	public static void closeBrowser(){

@@ -3,10 +3,12 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
 import com.app.pages.LoginPage;
+import com.yagna.utilities.GenericFunctionality;
 
 public class LoginPageFunctions extends BaseClass{
 	
-	private static Logger logger = Logger.getLogger(LoginPageFunctions.class);
+	public static Logger logger = Logger.getLogger(LoginPageFunctions.class);
+	
 	
 	static LoginPage login=new LoginPage();
 	
